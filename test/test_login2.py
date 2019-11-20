@@ -9,14 +9,14 @@ def app(request):
     request.addfinalizer(fixture.destroy)
     return fixture
 
-    def test_login2(app):
-    app.login(Group (username="annaTest50", password="annaTest50"))
-    app.logout()
+def test_login2(app):
+    app.session.login(Group (username="annaTest50", password="annaTest50"))
+    app.session.logout()
 
-    def logout(app):
-    app.driver.execute_script("window.scrollTo(0,0)")
-    app.driver.find_element(By.CSS_SELECTOR, ".client-section-menu__caret-down-icon > .icons-font-caret-down").click()
-    app.driver.find_element(By.CSS_SELECTOR, ".btn-signout__title").click()
+def logout(app):
+    app.sesssion.driver.execute_script("window.scrollTo(0,0)")
+    app.session.driver.find_element(By.CSS_SELECTOR, ".client-section-menu__caret-down-icon > .icons-font-caret-down").click()
+    app.session.driver.find_element(By.CSS_SELECTOR, ".btn-signout__title").click()
 
 
 
