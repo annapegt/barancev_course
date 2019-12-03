@@ -1,5 +1,6 @@
 from selenium import webdriver
 from selenium.webdriver.support.wait import WebDriverWait
+from .session import SessionHelper
 
 
 class Application:

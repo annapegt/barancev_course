@@ -3,13 +3,14 @@ import pytest
 from model.group import Group
 from fixture.application import Application
 
+
 @pytest.fixture
 def app(request):
-    firxture = Application()
+    fixture = Application()
     request.addfinalizer(fixture.destroy)
     return fixture
 
-def test_login2(app):
+def test_login(app):
     app.session.login(Group (username="annaTest50", password="annaTest50"))
     app.session.logout()
 
